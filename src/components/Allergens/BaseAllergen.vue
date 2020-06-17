@@ -1,28 +1,13 @@
 <template>
-  <v-tooltip bottom>
-    <template v-slot:activator="{ on }">
-      <v-img
-        :alt="alt"
-        :src="img"
-        aspect-ratio="1"
-        height="30"
-        width="30"
-        max-height="30"
-        max-width="30"
-        v-on="on"
-      ></v-img>
-    </template>
-    <span>{{alt}}</span>
-  </v-tooltip>
+  <v-chip v-if="included" label class="ma-1">{{text}}</v-chip>
 </template>
 
 <script>
 export default {
   name: "BaseAllergen",
   props: {
-    alt: String,
-    img: String,
-    included: Boolean
+    included: Boolean,
+    text: String
   },
   computed: {},
   data: () => ({})

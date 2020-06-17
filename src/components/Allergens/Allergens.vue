@@ -1,36 +1,41 @@
 <template>
-  <v-row>
-    <!-- 特定原材料 -->
-    <Egg :included="this.egg"></Egg>
-    <Dairy :included="this.dairy"></Dairy>
-    <Wheat :included="this.wheat"></Wheat>
-    <Shrimp :included="this.shrimp"></Shrimp>
-    <Crab :included="this.crab"></Crab>
-    <Buckwheat :included="this.buckwheat"></Buckwheat>
-    <Peanut :included="this.peanut"></Peanut>
-    <!-- 特定原材料に準ずるもの -->
-    <Almond :included="this.almond"></Almond>
-    <Abalone :included="this.abalone"></Abalone>
-    <Squid :included="this.squid"></Squid>
-    <SalmonRoe :included="this.salmonRoe"></SalmonRoe>
-    <Orange :included="this.orange"></Orange>
-    <KiwiFruit :included="this.kiwifruit"></KiwiFruit>
-    <Beef :included="this.beef"></Beef>
-    <Walnut :included="this.walnut"></Walnut>
-    <Salmon :included="this.salmon"></Salmon>
-    <Mackerel :included="this.mackerel"></Mackerel>
-    <SoyBeans :included="this.soyBeans"></SoyBeans>
-    <Chicken :included="this.chicken"></Chicken>
-    <Banana :included="this.banana"></Banana>
-    <Pork :included="this.pork"></Pork>
-    <Matsutake :included="this.matsutake"></Matsutake>
-    <Peach :included="this.peach"></Peach>
-    <Yam :included="this.yam"></Yam>
-    <Apple :included="this.apple"></Apple>
-    <Gelatine :included="this.gelatine"></Gelatine>
-    <Cashewnuts :included="this.cashewnuts"></Cashewnuts>
-    <Sesame :included="this.sesame"></Sesame>
-  </v-row>
+  <v-container>
+    <v-row>
+      <h6>含まれるアレルゲン(特定原材料およびそれに準ずるもの)</h6>
+    </v-row>
+    <v-row>
+      <!-- 特定原材料 -->
+      <Egg :included="this.egg"></Egg>
+      <Dairy :included="this.dairy"></Dairy>
+      <Wheat :included="this.wheat"></Wheat>
+      <Shrimp :included="this.shrimp"></Shrimp>
+      <Crab :included="this.crab"></Crab>
+      <Buckwheat :included="this.buckwheat"></Buckwheat>
+      <Peanut :included="this.peanut"></Peanut>
+      <!-- 特定原材料に準ずるもの -->
+      <Almond :included="this.almond"></Almond>
+      <Abalone :included="this.abalone"></Abalone>
+      <Squid :included="this.squid"></Squid>
+      <SalmonRoe :included="this.salmonRoe"></SalmonRoe>
+      <Orange :included="this.orange"></Orange>
+      <KiwiFruit :included="this.kiwifruit"></KiwiFruit>
+      <Beef :included="this.beef"></Beef>
+      <Walnut :included="this.walnut"></Walnut>
+      <Salmon :included="this.salmon"></Salmon>
+      <Mackerel :included="this.mackerel"></Mackerel>
+      <SoyBeans :included="this.soyBeans"></SoyBeans>
+      <Chicken :included="this.chicken"></Chicken>
+      <Banana :included="this.banana"></Banana>
+      <Pork :included="this.pork"></Pork>
+      <Matsutake :included="this.matsutake"></Matsutake>
+      <Peach :included="this.peach"></Peach>
+      <Yam :included="this.yam"></Yam>
+      <Apple :included="this.apple"></Apple>
+      <Gelatine :included="this.gelatine"></Gelatine>
+      <Cashewnuts :included="this.cashewnuts"></Cashewnuts>
+      <Sesame :included="this.sesame"></Sesame>
+    </v-row>
+  </v-container>
 </template>
 
 <script>
