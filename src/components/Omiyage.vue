@@ -25,6 +25,15 @@
       </v-col>
       <v-col cols="2"></v-col>
     </v-row>
+
+    <!-- TODO もう少しまともなエラー処理-->
+    <v-alert
+      v-if="this.error"
+      border="left"
+      colored-border
+      type="error"
+      elevation="2"
+    >データの取得に失敗しました。</v-alert>
   </v-container>
 </template>
 
@@ -41,15 +50,19 @@ export default {
       fetch(this.source)
         .then(stream => stream.json())
         .then(data => (this.omiyages = data))
-        .catch(error => console.error(error));
+        .catch(error => {
+          console.error(error);
+          this.error = true;
+        });
     }
   },
   mounted() {
     this.fetchItems();
   },
   data: () => ({
-    source: "@/json/omiyage.json",
-    omiyages: Array
+    source: "./json/omiyage.json",
+    omiyages: Array,
+    error: false
   })
 };
 </script>
