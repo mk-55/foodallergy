@@ -8,8 +8,8 @@
       </v-col>
     </v-row>
     <v-row>
-      <v-col cols="2"></v-col>
-      <v-col class="mb-4" cols="8">
+      <v-col></v-col>
+      <v-col class="mb-4" lg="9" md="9" sm="9" cols="12">
         <Item
           v-for="item in omiyages"
           :key="item.name"
@@ -23,7 +23,7 @@
           :url="item.url"
         ></Item>
       </v-col>
-      <v-col cols="2"></v-col>
+      <v-col></v-col>
     </v-row>
 
     <!-- TODO もう少しまともなエラー処理-->
