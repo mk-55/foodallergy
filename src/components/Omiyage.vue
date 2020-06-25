@@ -60,7 +60,7 @@ export default {
     this.fetchItems();
   },
   data: () => ({
-    source: "./json/omiyage.json",
+    source: "/json/omiyages.json",
     omiyages: Array,
     error: false
   })
