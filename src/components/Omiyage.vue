@@ -10,8 +10,9 @@
     <v-row>
       <v-col></v-col>
       <v-col class="mb-4" lg="9" md="9" sm="9" cols="12">
+        <PrefecturesAutoComplete @selectedPrefectures="selectedPrefectures"></PrefecturesAutoComplete>
         <Item
-          v-for="item in omiyages"
+          v-for="item in displayedOmiyages"
           :key="item.name"
           :name="item.name"
           :brand="item.brand"
@@ -39,11 +40,13 @@
 
 <script>
 import Item from "./Item";
+import PrefecturesAutoComplete from "./PrefecturesAutoComplete.vue";
 
 export default {
   name: "Omiyage",
   components: {
-    Item
+    Item,
+    PrefecturesAutoComplete
   },
   methods: {
     fetchItems() {
@@ -54,6 +57,9 @@ export default {
           console.error(error);
           this.error = true;
         });
+    },
+    selectedPrefectures(p) {
+      this.prefectures = p;
     }
   },
   mounted() {
@@ -61,8 +67,23 @@ export default {
   },
   data: () => ({
     source: "/json/omiyages.json",
-    omiyages: Array,
+    omiyages: [],
+    prefectures: [],
+    allergens: [],
     error: false
-  })
+  }),
+  computed: {
+    //画面表示するお土産を返す
+    displayedOmiyages() {
+      let ret = this.omiyages;
+      //filter by Prefectures
+      ret =
+        this.prefectures.length == 0
+          ? ret
+          : ret.filter(o => this.prefectures.some(p => p.id == o.prefecture));
+      // filter by Allergens
+      return ret;
+    }
+  }
 };
 </script>

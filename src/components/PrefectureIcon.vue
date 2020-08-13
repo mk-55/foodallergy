@@ -19,7 +19,7 @@ export default {
   computed: {
     prefectureName: function() {
       console.debug(this.prefectureId);
-      return prefectures[this.prefectureId];
+      return prefectures[this.prefectureId].name;
     }
   },
   data: () => ({})
