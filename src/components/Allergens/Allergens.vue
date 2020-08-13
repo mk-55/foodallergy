@@ -104,6 +104,8 @@ export default {
     Cashewnuts,
     Sesame
   },
+  //XXX データの持ち方を検討する
+  // 処理を考えると微妙な気はするが、確実にアレルゲンを有無を指定する、という意味ではこれで良い気もする
   props: {
     egg: Boolean,
     dairy: Boolean,
