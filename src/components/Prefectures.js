@@ -1,15 +1,4 @@
-<!-- 都道府県 -->
-<template>
-  <v-chip label small>
-    <v-avatar left>
-      <v-icon small>mdi-map-marker</v-icon>
-    </v-avatar>
-    {{prefectureName}}
-  </v-chip>
-</template>
-
-<script>
-const prefectures = [
+export const prefectures = [
   "不明", //0
   "北海道",
   "青森県",
@@ -57,18 +46,5 @@ const prefectures = [
   "大分県",
   "宮崎県",
   "鹿児島県",
-  "沖縄県"
+  "沖縄県",
 ];
-export default {
-  name: "Prefecture",
-  props: {
-    prefecture: Number
-  },
-  computed: {
-    prefectureName: function() {
-      return prefectures[this.prefecture];
-    }
-  },
-  data: () => ({})
-};
-</script>
