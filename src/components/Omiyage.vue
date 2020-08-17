@@ -68,7 +68,7 @@ export default {
       this.allergens = a;
     },
     //TODO もう少しスマートに書けない？あまりにひどい
-    //各お土産でアレルゲンをBooleanで表現しているのがネックだが、このデータ構造は、確実にアレルゲンを定義するという意味で買えない方が良い気がしている
+    //各お土産でアレルゲンをBooleanで表現しているのが問題なのだが、このデータ構造は、確実にアレルゲンを定義するという意味で変えない方が良い気がしている
     includesAllergesns(omiyage, allergens) {
       let a = omiyage.allergens;
       if (allergens.some(i => i.id == 1) && a.egg == true) return false;
