@@ -1,7 +1,7 @@
 <template>
   <v-card class="my-4">
     <v-card-title>
-      <Prefecture :prefecture="prefecture"></Prefecture>
+      <PrefectureIcon :prefectureId="prefecture"></PrefectureIcon>
       <span class="ma-1">{{this.name + " / " +this.brand}}</span>
     </v-card-title>
     <v-card-subtitle class="pb-0">{{this.summary}}</v-card-subtitle>
@@ -61,13 +61,13 @@
 
 <script>
 import Allergens from "./Allergens/Allergens";
-import Prefecture from "./Prefecture";
+import PrefectureIcon from "./PrefectureIcon";
 
 export default {
   name: "Item",
   components: {
     Allergens,
-    Prefecture
+    PrefectureIcon
   },
   props: {
     name: String,
