@@ -50,6 +50,7 @@
 import Item from "./Item";
 import PrefecturesAutoComplete from "./PrefecturesAutoComplete.vue";
 import AllergensAutoComplete from "./AllergensAutoComplete.vue";
+import Content from "../assets/json/omiyages.json";
 
 export default {
   name: "Omiyage",
@@ -60,6 +61,7 @@ export default {
   },
   methods: {
     //データの取得（将来的にはAPIにするか）
+    /*
     fetchItems() {
       fetch(this.source)
         .then((stream) => stream.json())
@@ -71,7 +73,7 @@ export default {
           console.error(error);
           this.error = true;
         });
-    },
+    },*/
     selectPrefectures(p) {
       this.prefectures = p;
     },
@@ -123,12 +125,12 @@ export default {
     },
   },
   mounted() {
-    this.fetchItems();
+    //this.fetchItems();
   },
   data: () => ({
-    source: "/json/omiyages.json",
-    loading: true,
-    omiyages: [],
+    //source: "/json/omiyages.json",
+    loading: false, //不要だけど一応残す
+    omiyages: Content,
     prefectures: [],
     allergens: [],
     error: false,
