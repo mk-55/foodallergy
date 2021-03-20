@@ -2,13 +2,13 @@
   <v-card class="my-4">
     <v-card-title>
       <PrefectureIcon :prefectureId="prefecture"></PrefectureIcon>
-      <span class="ma-1">{{this.name + " / " +this.brand}}</span>
+      <span class="ma-1">{{ this.name + " / " + this.brand }}</span>
     </v-card-title>
-    <v-card-subtitle class="pb-0">{{this.summary}}</v-card-subtitle>
+    <v-card-subtitle class="pb-0">{{ this.summary }}</v-card-subtitle>
     <v-card-actions>
       <v-spacer></v-spacer>
-      <v-btn icon @click="show = !show">
-        <v-icon>{{ show ? 'mdi-chevron-up' : 'mdi-chevron-down' }}</v-icon>
+      <v-btn icon @click="show = !show" aria-label="show details">
+        <v-icon>{{ show ? "mdi-chevron-up" : "mdi-chevron-down" }}</v-icon>
       </v-btn>
     </v-card-actions>
 
@@ -46,9 +46,9 @@
           :sesame="this.allergens.sesame"
         ></Allergens>
         <v-card-text>
-          {{this.note}}
+          {{ this.note }}
           <br />
-          {{this.ingredient}}
+          {{ this.ingredient }}
         </v-card-text>
         <v-divider class="mx-4"></v-divider>
         <v-card-text>
@@ -67,7 +67,7 @@ export default {
   name: "Item",
   components: {
     Allergens,
-    PrefectureIcon
+    PrefectureIcon,
   },
   props: {
     name: String,
@@ -77,10 +77,10 @@ export default {
     note: String,
     prefecture: Number,
     allergens: {},
-    url: String
+    url: String,
   },
   data: () => ({
-    show: false
-  })
+    show: false,
+  }),
 };
 </script>
